@@ -18,11 +18,11 @@ public class OrderedList_inArraySlots
               \findMe is absent from this list.
      */
     public int indexOf( Integer findMe) {
-        return indexOfFindMe(findMe); /* changing this value in 
+        return binarySearchWhileStyle(findMe); /* changing this value in 
 		  solutions will check the processing */
     }
 	
-	public int indexOfFindMe( Integer findMe) {
+	public int binarySearchWhileStyle( Integer findMe) {
 		int lowerLimit = 0;
 		int upperLimit = size() - 1;
 		int indexToCheck;
