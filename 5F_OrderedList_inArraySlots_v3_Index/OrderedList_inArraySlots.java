@@ -40,6 +40,24 @@ public class OrderedList_inArraySlots
 		}
 		return -1;
 	}
+	
+	public int binarySearchRecursive( Integer findMe, 
+									  int lowerLimit, 
+									  int upperLimit) {
+		int indexToCheck = (lowerLimit + upperLimit) / 2;
+		int location = list_iAS.get(indexToCheck).compareTo(findMe);
+		if(upperLimit >= lowerLimit){
+			if (location == 0)
+				return indexToCheck;
+			if (location > 0)
+				binarySearchRecursive (findMe, lowerLimit, indexToCheck - 1);
+			if (location < 0)
+				binarySearchRecursive (findMe, indexToCheck + 1, upperLimit);
+		}
+		return -1;
+	}
+		
+								
 			
     
 
