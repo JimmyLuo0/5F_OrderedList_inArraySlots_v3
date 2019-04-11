@@ -18,9 +18,29 @@ public class OrderedList_inArraySlots
               \findMe is absent from this list.
      */
     public int indexOf( Integer findMe) {
-        return -32768; /* changing this value in 
+        return indexOfFindMe(findMe); /* changing this value in 
 		  solutions will check the processing */
     }
+	
+	public int indexOfFindMe( Integer findMe) {
+		int lowerLimit = 0;
+		int upperLimit = size() - 1;
+		int indexToCheck;
+		int location;
+		while(upperLimit >= lowerLimit){
+			indexToCheck = (lowerLimit + upperLimit) / 2;
+			location = list_iAS.get(indexToCheck).compareTo(findMe);
+			if (location == 0)
+				return indexToCheck;
+			else{ 
+				if (location > 0)
+					upperLimit = indexToCheck - 1;
+				else lowerLimit = indexToCheck + 1;
+			}
+		}
+		return -1;
+	}
+			
     
 
     // ------ code from previous assignments below here ----
