@@ -50,9 +50,9 @@ public class OrderedList_inArraySlots
 			if (location == 0)
 				return indexToCheck;
 			if (location > 0)
-				binarySearchRecursive (findMe, lowerLimit, indexToCheck - 1);
+				return binarySearchRecursive (findMe, lowerLimit, indexToCheck - 1);
 			if (location < 0)
-				binarySearchRecursive (findMe, indexToCheck + 1, upperLimit);
+				return binarySearchRecursive (findMe, indexToCheck + 1, upperLimit);
 		}
 		return -1;
 	}
